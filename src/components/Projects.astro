@@ -1,0 +1,18 @@
+---
+import type { Projects } from "../lib/projects";
+
+type Props = {
+  project: Projects;
+};
+
+const {
+  project: { repo: name, description, link },
+} = Astro.props;
+---
+
+<div class="w-fit flex flex-col">
+  <a href={link} class="links">
+    <span class="text-md">{name}</span>
+  </a>
+  <span class="pt-3 text-sm">{description}</span>
+</div>
