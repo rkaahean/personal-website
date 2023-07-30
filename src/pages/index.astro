@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 import Project from "../components/Projects.astro";
+import PostRow from "@/components/PostRow.astro";
 
 const projects = await getProjects(6);
 const blogs = await getCollection("blog");
@@ -43,7 +44,9 @@ const blogs = await getCollection("blog");
       </div>
 
       <h1 class="text-xl mt-10 tracking-wide">Blogs</h1>
-      <div class="flex flex-col gap-5"></div>
+      <div class="flex flex-col gap-5">
+        {blogs.map((post) => <PostRow {post} />)}
+      </div>
     </div>
   </main>
 </Layout>
