@@ -7,13 +7,16 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Project from "../components/Projects.astro";
 import PostRow from "@/components/PostRow.astro";
+import { twMerge } from "tailwind-merge";
 
 const projects = await getProjects(6);
 const blogs = await getCollection("blog");
 ---
 
 <Layout title="Ranjan Srinivas - Home">
-  <main class="flex flex-col h-screen w-screen items-center px-5 sm:px-0">
+  <main
+    class={twMerge("flex flex-col h-screen w-screen items-center px-5 sm:px-0")}
+  >
     <Navbar />
 
     <div class="w-full sm:w-2/5">
