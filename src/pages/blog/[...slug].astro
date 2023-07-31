@@ -29,14 +29,14 @@ const { Content } = await post.render();
   <main class="flex flex-col h-screen w-screen items-center px-5 sm:px-0">
     <Navbar />
 
-    <div class="flex justify-start flex-col h-full blog">
-      <a href="/" class="links">← back</a>
+    <div class="flex justify-start flex-col h-full">
+      <a href="/" class="links mb-5">← back</a>
       <div class="text-left mb-10">
         <div class="text-4xl text-stone-200 tracking-widest">{title}</div>
         <div class="text-stone-500">{description}</div>
       </div>
       <div class="flex flex-col">
-        <Content class="blog" />
+        <Content />
       </div>
     </div>
   </main>
