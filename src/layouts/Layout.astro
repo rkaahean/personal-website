@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import "@fontsource/roboto";
 ---
 
 <!DOCTYPE html>
@@ -22,7 +23,6 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   html {
-    font-family: system-ui, sans-serif;
     background: #050210;
     background-size: 224px;
     color: #78716c;
@@ -35,7 +35,7 @@ const { title } = Astro.props;
   }
 
   code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+    font-family: Roboto, Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
   .links {
@@ -49,6 +49,7 @@ const { title } = Astro.props;
   }
   body {
     @apply text-stone-300;
+    font-family: "Roboto";
   }
   a {
     @apply text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4;
