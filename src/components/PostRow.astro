@@ -7,16 +7,32 @@ type Props = {
 
 const {
   post: {
-    data: { title, date },
+    data: { title, date, isDraft },
     slug,
   },
 } = Astro.props;
 ---
 
 <article class="flex justify-between">
-  <a href={`/blog/${slug}`} class="links text-sm sm:text-base" target="_blank">
-    <span>{title}</span>
-  </a>
-
-  <span class="text-xs sm:text-sm">{date}</span>
+  {
+    isDraft ? (
+      <>
+        <span class="text-sm sm:text-base text-stone-700">{title}</span>
+        <span class="text-xs sm:text-sm text-stone-700 font-bold tracking-widest">
+          DRAFT
+        </span>
+      </>
+    ) : (
+      <>
+        <a
+          href={`/blog/${slug}`}
+          class="links text-sm sm:text-base"
+          target="_blank"
+        >
+          <span>{title}</span>
+        </a>
+        <span class="text-xs sm:text-sm">{date}</span>
+      </>
+    )
+  }
 </article>

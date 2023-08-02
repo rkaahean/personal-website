@@ -2,16 +2,32 @@
 title: "How I setup my website with Astro"
 date: "29 July 2023"
 description: "Ditching NextJS, using MDX & more... "
+isDraft: true
 ---
 
 ### Introduction
 
-This is how I set up my blog with Astro.
+I had previously written my [website](https://github.com/rkaahean/rkaahean.github.io) using NextJS. There were a few drawbacks
+to this -
 
-### Previous Setup
+- **Lack of proper MDX support** : At the time of writing, NextJS (13.4.10) had only experimental support for MDX.
 
-For most of my other projects, I have used [Next.js](https://www.nextjs.com).
+```typescript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    mdxRs: true,
+  },
+};
 
-### My Astro Setup
+const withMDX = require("@next/mdx")();
+module.exports = withMDX(nextConfig);
+```
 
-Here's how I configured my website using Astro.
+I had heard great things about Astro, and the docs were a lot more oriented towards hosting / managing content.
+
+### Setup
+
+#### 1. Getting Start
+
+The first step is setting up an Astro project - with `npm create astro@latest`. Reading about the project structure [was also helpful](https://docs.astro.build/en/core-concepts/project-structure/).

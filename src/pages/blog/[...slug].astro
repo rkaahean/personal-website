@@ -1,11 +1,11 @@
 ---
 import Navbar from "@/components/Navbar";
-import Blog from "@/layouts/Blog.astro";
 import Layout from "@/layouts/Layout.astro";
-import { CollectionEntry, getCollection } from "astro:content";
+import { getBlogs } from "@/lib/utils";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getBlogs();
 
   return posts.map((post) => ({
     params: { slug: post.slug },
@@ -26,7 +26,7 @@ const {
 const { Content } = await post.render();
 ---
 
-<Blog title="Blog">
+<Layout title="Blog">
   <main class="flex flex-col h-screen w-screen items-center px-5 sm:px-0">
     <Navbar />
 
@@ -45,4 +45,4 @@ const { Content } = await post.render();
       </div>
     </div>
   </main>
-</Blog>
+</Layout>

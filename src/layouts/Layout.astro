@@ -25,7 +25,6 @@ import "@fontsource/roboto";
   html {
     background: #050210;
     background-size: 224px;
-    color: #78716c;
     background-image: radial-gradient(
       circle at 1px 1px,
       #33303b 1px,
@@ -34,10 +33,6 @@ import "@fontsource/roboto";
     background-size: 40px 40px;
   }
 
-  code {
-    font-family: Roboto, Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
   .links {
     @apply text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4;
   }
@@ -47,11 +42,27 @@ import "@fontsource/roboto";
   h2 {
     @apply text-lg sm:text-2xl text-stone-500 mt-5;
   }
+  h3 {
+    @apply text-base sm:text-xl text-stone-500 mt-5;
+  }
+  h4 {
+    @apply text-sm sm:text-base text-stone-500 mt-5;
+  }
   body {
     @apply text-stone-300;
     font-family: "Roboto";
   }
   a {
     @apply text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4;
+  }
+  li {
+    @apply my-2 list-inside list-disc;
+  }
+  code,
+  pre {
+    font-family: "Hack", "Courier New", Courier, monospace;
+    background: #242324 !important;
+    font-weight: 400 !important;
+    @apply my-5;
   }
 </style>
