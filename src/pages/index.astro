@@ -8,6 +8,7 @@ import BlogRow from "@/components/BlogRow.astro";
 import { getBlogs } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Project from "../components/Projects.astro";
+import Footer from "@/components/Footer";
 
 const projects = await getProjects(6);
 const blogs = await getBlogs();
@@ -15,7 +16,10 @@ const blogs = await getBlogs();
 
 <Layout title="Ranjan Srinivas - Home">
   <main
-    class={twMerge("flex flex-col h-screen w-screen items-center px-5 sm:px-0")}
+    class={twMerge(
+      "flex flex-col h-screen w-screen items-center px-5 sm:px-0",
+      "justify-between"
+    )}
   >
     <Navbar />
 
@@ -51,5 +55,6 @@ const blogs = await getBlogs();
         {blogs.map((post) => <BlogRow {post} />)}
       </div>
     </div>
+    <Footer />
   </main>
 </Layout>
