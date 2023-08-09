@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import "@fontsource/roboto";
+import "@fontsource/inter";
 ---
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ import "@fontsource/roboto";
     @apply text-3xl text-stone-500;
   }
   h2 {
-    @apply text-lg sm:text-2xl text-stone-500 mt-5;
+    @apply text-lg sm:text-2xl text-stone-500 mt-3;
   }
   h3 {
     @apply text-base sm:text-xl text-stone-500 mt-5;
@@ -49,8 +49,8 @@ import "@fontsource/roboto";
     @apply text-sm sm:text-base text-stone-500 mt-5;
   }
   body {
-    @apply text-stone-300;
-    font-family: "Roboto";
+    @apply text-stone-300 text-xs sm:text-base leading-relaxed;
+    font-family: "Inter";
   }
   a {
     @apply text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4;
@@ -58,11 +58,24 @@ import "@fontsource/roboto";
   li {
     @apply my-2 list-inside list-disc;
   }
-  code,
+  code {
+    font-family: Menlo, Consolas, "Droid Sans Mono", "Courier New", Courier,
+      monospace;
+    background: #1e1e1e !important;
+    color: #d4d4d4;
+    font-weight: 400;
+    border-radius: 3px;
+    @apply text-xs sm:text-sm;
+    /* If you need space around inline code, use margin (mx-1 or my-1) or adjust line-height. */
+  }
+
   pre {
-    font-family: "Hack", "Courier New", Courier, monospace;
-    background: #242324 !important;
-    font-weight: 400 !important;
-    @apply my-5;
+    font-family: Menlo, Consolas, "Droid Sans Mono", "Courier New", Courier,
+      monospace;
+    background: #1e1e1e !important;
+    color: #d4d4d4;
+    font-weight: 400;
+    border-radius: 3px;
+    @apply my-5 text-xs sm:text-sm py-5; /* py-5 will now only apply to block code wrapped in <pre> */
   }
 </style>

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 
-import PostRow from "@/components/PostRow.astro";
+import BlogRow from "@/components/BlogRow.astro";
 import { getBlogs } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Project from "../components/Projects.astro";
@@ -47,8 +47,8 @@ const blogs = await getBlogs();
       </div>
 
       <h1 class="text-xl mt-10 tracking-wide">Blogs</h1>
-      <div class="flex flex-col gap-0.5">
-        {blogs.map((post) => <PostRow {post} />)}
+      <div class="flex flex-col gap-2">
+        {blogs.map((post) => <BlogRow {post} />)}
       </div>
     </div>
   </main>

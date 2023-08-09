@@ -27,13 +27,13 @@ const { Content } = await post.render();
 ---
 
 <Layout title="Blog">
-  <main class="flex flex-col h-screen w-screen items-center px-5 sm:px-0">
+  <main class="flex flex-col h-screen w-screen items-center">
     <Navbar />
 
-    <div class="flex justify-start flex-col h-full">
+    <div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2">
       <a href="/" class="links mb-5">← back</a>
       <div class="text-left mb-10">
-        <div class="text-xl sm:text-3xl text-stone-200 tracking-widest">
+        <div class="text-xl sm:text-3xl text-stone-200 tracking-tighter">
           {title}
         </div>
         <div class="text-stone-500 text-sm sm:text-base">
