@@ -20,14 +20,14 @@ type Props = {
 const {
   post,
   post: {
-    data: { title, description, date, isDraft },
+    data: { title, description },
   },
 } = Astro.props;
 const { Content } = await post.render();
 ---
 
 <Layout title="Blog">
-  <main class="flex flex-col h-screen w-screen items-center">
+  <main class="flex flex-col h-screen w-[99%] items-center">
     <Navbar />
 
     <div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2">
