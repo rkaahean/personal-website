@@ -31,7 +31,13 @@ const {
         >
           <span>{title}</span>
         </a>
-        <span class="text-xs sm:text-sm">{date}</span>
+        <span class="text-xs sm:text-sm">
+          {new Date(date).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </span>
       </>
     )
   }

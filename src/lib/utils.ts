@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import { type ClassValue, clsx } from "clsx";
+import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -7,5 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export async function getBlogs() {
-  return await getCollection("blog", (blog) => !blog.data.isHidden);
+  let blogs = await getCollection("blog", (blog) => !blog.data.isHidden);
+
+  return blogs.sort((a, b) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
 }

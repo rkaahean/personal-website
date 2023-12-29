@@ -27,7 +27,9 @@ const {
 const { Content } = await post.render();
 
 const blogs = await getBlogs();
-const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
+const randomBlog = blogs.filter((blog) => blog.id !== post.id)[
+  Math.floor(Math.random() * (blogs.length - 1))
+];
 ---
 
 <Layout title="Blog">
@@ -47,8 +49,9 @@ const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
       <div class="flex flex-col">
         <Content />
       </div>
-      <div class="my-5 text-stone-500">
+      <div class="mt-16 text-stone-500 italic">
         Thanks for reading! Want to read more like this? Read <a
+          class="ml-1"
           href={randomBlog.slug}>{randomBlog.data.title}</a
         >
       </div>
