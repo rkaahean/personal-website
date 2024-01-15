@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "89b227377da01278",
+        "id": "8a7b6c3c7d9206be",
         "type": "tabs",
         "children": [
           {
-            "id": "8471e8649e5ce58b",
+            "id": "dd737926fa6ee301",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "setting_up_blog.md",
+                "file": "cli_mbing_to_sucess.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "setting_up_blog.md",
+                "file": "cli_mbing_to_sucess.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "setting_up_blog.md",
+                "file": "cli_mbing_to_sucess.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "setting_up_blog.md"
+                "file": "cli_mbing_to_sucess.md"
               }
             }
           }
@@ -146,6 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8471e8649e5ce58b",
-  "lastOpenFiles": []
+  "active": "dd737926fa6ee301",
+  "lastOpenFiles": [
+    "cli_mbing_to_sucess.md",
+    "images/1.png",
+    "images/Pasted image 20240114220650.png",
+    "Pasted image 20240114220602.png",
+    "images",
+    "CleanShot 2024-01-14 at 21.56.04@2x.png",
+    "Pasted image 20240114220058.png",
+    "sync_or_swim.md",
+    "setting_up_blog.md"
+  ]
 }
