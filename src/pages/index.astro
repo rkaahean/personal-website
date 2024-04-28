@@ -5,7 +5,6 @@ import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 
 import BlogRow from "@/components/BlogRow.astro";
-import Footer from "@/components/Footer";
 import { getBlogs } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Project from "../components/Projects.astro";
@@ -25,7 +24,7 @@ const blogs = await getBlogs();
 
       <div class="flex flex-col gap-5 text-stone-300 text-sm sm:text-base">
         <p>
-          I'm a 26/yo software engineer from India, working at <a
+          I'm a 26/yo Software Engineer working at <a
             href="https://www.chippercash.com"
             class="links">ChipperCash</a
           >, and currently residing in Los Angeles, CA.
@@ -52,6 +51,6 @@ const blogs = await getBlogs();
         {blogs.map((post) => <BlogRow {post} />)}
       </div>
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </main>
 </Layout>
