@@ -10,16 +10,15 @@ bunch of terminlogy associated, and it drives me crazy remebering their nuances.
 <br />
 So here's a blog post, mostly to remind myself.
 
-
 ## Firstly, a few definitions
 
 #### Concurrency
 
-When multiple tasks are happening *around* the same time. For example, loading multiple tabs in your web browser.
+When multiple tasks are happening _around_ the same time. For example, loading multiple tabs in your web browser.
 
 #### Parallelism
 
-When a single task is done by multiple actors - which are usually CPU cores. For example, if you have to compute the sum of two numbers 1000 times, doing it 500 times on 1 core, and 500 times on another would be parallelism. 
+When a single task is done by multiple actors - which are usually CPU cores. For example, if you have to compute the sum of two numbers 1000 times, doing it 500 times on 1 core, and 500 times on another would be parallelism.
 
 #### Thread
 
@@ -33,12 +32,12 @@ Multiple threads within the same process. A code and web browser are on differen
 
 These are programming models. I.e, instructing how the code is to be executed. Synchronous programming means the code runs in the order in which it is stated. In async programming, the code is written and executed concurrently. If you run an async program on multiple threads, you acheive parallelism.
 
-<br />
-## Examples
+### Examples
 
 Okay, lets write some code. The example I'm going to is simple - do `3 + 4`, 1,000,000 times.
 
 ### Single Threaded, Synchronous
+
 This is the simplest form. We just add numbers in one thread, one by one. No concurrency, No parallelism.
 
 ```rust
@@ -58,6 +57,7 @@ This is the simplest form. We just add numbers in one thread, one by one. No con
         println!("Took: {:.2?}", elapsed);
     }
 ```
+
 For loop, run add a million times, and calculate duration. This takes about 4-8ms.
 
 ### Single Threaded - Asynchronous
@@ -83,7 +83,7 @@ For loop, run add a million times, and calculate duration. This takes about 4-8m
     }
 ```
 
-Instead of adding one-by-one, add asynchronously. 
+Instead of adding one-by-one, add asynchronously.
 
 - Firstly, we create a modified version of `add`, `add_async`, which is just the former with an `async` tag. We also make the runner async.
 - Now, in the runner, store all the `Futures` (result of an async operation, like a `Promise`) in a vector. Calling `join_all` on the vector is akin to calling `await` on all of the futures at once.
@@ -128,7 +128,7 @@ Okay, what if we split the 1M adds into multiple threads? The adds are still exe
 - Split the addition into 4 threads. This means each thread will add 250_000 times.
 - Create a new thread using the thread::spawn syntax. Use the `move` keyword to force the closure to take ownership of the `tasks_per_thread` variable.
 - Modify the `runner` to take in an argument to specify the number of `add`s.
-  
+
 Running this takes around 1-1.5ms. 4x faster than the single threaded code, using 4 threads.
 
 ### Multi Threaded - Asynchronous
@@ -170,7 +170,7 @@ The difference here is that each thread is blocked until `runner` runs to comple
 
 ### A note on performance
 
-Asynchronous usage does more harm than good here. 
+Asynchronous usage does more harm than good here.
 
 <br />
 Adding numbers is not I/O bound. I/O bound operations tend to take longer, making context switching useful. Scraping data from multiple websites is a good candidate.

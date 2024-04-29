@@ -40,24 +40,27 @@ import "@fontsource/inter";
   .links {
     @apply text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4;
   }
+  .row {
+    @apply text-stone-200 hover:text-stone-400 text-sm;
+  }
   h1 {
-    @apply text-3xl text-stone-500 mt-2 mb-2;
+    @apply text-base text-stone-500 mt-5 mb-2;
   }
   h2 {
-    @apply text-lg sm:text-2xl text-stone-500 mt-10 mb-2;
+    @apply text-base text-stone-500 mt-5 mb-2;
   }
   h3 {
-    @apply text-base sm:text-xl text-stone-500 mt-10 mb-2;
+    @apply text-base text-stone-500 mt-5 mb-2;
   }
   h4 {
-    @apply text-sm sm:text-base text-stone-500 mt-10 mb-2;
+    @apply text-base text-stone-500 mt-5 mb-2;
   }
   body {
-    @apply text-stone-300 text-xs sm:text-base leading-relaxed;
+    @apply text-stone-300 text-base;
     font-family: "Inter";
   }
   a {
-    @apply text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4;
+    @apply text-stone-400 hover:text-stone-300 text-base underline underline-offset-4;
   }
   li {
     @apply my-2 list-inside list-disc;
@@ -69,7 +72,7 @@ import "@fontsource/inter";
     color: #d4d4d4;
     font-weight: 400;
     border-radius: 3px;
-    @apply text-xs sm:text-sm;
+    @apply text-base;
     /* If you need space around inline code, use margin (mx-1 or my-1) or adjust line-height. */
   }
 
@@ -80,6 +83,6 @@ import "@fontsource/inter";
     color: #d4d4d4;
     font-weight: 400;
     border-radius: 3px;
-    @apply my-5 text-xs sm:text-sm py-5 px-5; /* py-5 will now only apply to block code wrapped in <pre> */
+    @apply my-5 text-xs py-5 px-5; /* py-5 will now only apply to block code wrapped in <pre> */
   }
 </style>

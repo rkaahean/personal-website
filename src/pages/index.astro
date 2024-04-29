@@ -5,12 +5,14 @@ import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 
 import BlogRow from "@/components/BlogRow.astro";
-import { getBlogs } from "@/lib/utils";
+import NoteRow from "@/components/NoteRow.astro";
+import { getBlogs, getNotes } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Project from "../components/Projects.astro";
 
 const projects = await getProjects(6);
 const blogs = await getBlogs();
+const notes = await getNotes();
 ---
 
 <Layout title="Ranjan Srinivas - Home">
@@ -19,36 +21,47 @@ const blogs = await getBlogs();
   >
     <Navbar />
 
-    <div class="w-full sm:w-2/5 flex flex-col flex-grow">
-      <h1 class="text-lg mt-10 font-black">Ranjan Srinivas</h1>
-
-      <div class="flex flex-col gap-5 text-stone-300 text-sm sm:text-base">
-        <p>
-          I'm a 26/yo Software Engineer working at <a
-            href="https://www.chippercash.com"
-            class="links">ChipperCash</a
-          >, and currently residing in Los Angeles, CA.
-        </p>
-
-        <p>
-          In my free time, I play <a
-            href="https://www.ea.com/games/apex-legends"
-            class="links">Apex Legends</a
-          >, watch <a href="https://www.manutd.com" class="links"
-            >Manchester United</a
-          >, or just relax at coffee shops.
-        </p>
+    <div class="w-full sm:w-2/5 flex flex-col flex-grow gap-10 text-base">
+      <div>
+        <h1 class="mt-10 font-semibold">Ranjan Srinivas</h1>
+        <div class="text-stone-300">
+          <p>
+            I'm a 26/yo Software Engineer working at <a
+              href="https://www.chippercash.com"
+              class="links">ChipperCash</a
+            >, and currently residing in Los Angeles, CA.
+          </p>
+          <br />
+          <p>
+            In my free time, I play <a
+              href="https://www.ea.com/games/apex-legends"
+              class="links">Apex Legends</a
+            >, watch <a href="https://www.manutd.com" class="links"
+              >Manchester United</a
+            >, or just relax at coffee shops.
+          </p>
+        </div>
       </div>
 
-      <h1 class="text-lg mt-10 font-black">Projects</h1>
-
-      <div class="grid grid-cols-2 gap-5 md:grid-cols-3">
-        {projects.map((project) => <Project {project} />)}
+      <div>
+        <h1 class="font-semibold">Projects</h1>
+        <div class="grid grid-cols-2 gap-5 md:grid-cols-3">
+          {projects.map((project) => <Project {project} />)}
+        </div>
       </div>
 
-      <h1 class="text-lg mt-10 font-black">Blogs</h1>
-      <div class="flex flex-col gap-2">
-        {blogs.map((post) => <BlogRow {post} />)}
+      <div>
+        <h1 class="font-semibold">Blogs</h1>
+        <div class="flex flex-col gap-1">
+          {blogs.map((post) => <BlogRow {post} />)}
+        </div>
+      </div>
+
+      <div>
+        <h1 class="font-semibold">Notes</h1>
+        <div class="flex flex-col gap-1">
+          {notes.map((post) => <NoteRow {post} />)}
+        </div>
       </div>
     </div>
     <!-- <Footer /> -->

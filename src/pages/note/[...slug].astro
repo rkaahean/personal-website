@@ -1,11 +1,11 @@
 ---
 import Navbar from "@/components/Navbar";
 import Layout from "@/layouts/Layout.astro";
-import { getBlogs } from "@/lib/utils";
+import { getNotes } from "@/lib/utils";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getBlogs();
+  const posts = await getNotes();
 
   return posts.map((post) => ({
     params: { slug: post.slug },
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"note">;
 };
 
 const {
@@ -25,35 +25,35 @@ const {
 } = Astro.props;
 const { Content } = await post.render();
 
-const blogs = await getBlogs();
-const randomBlog = blogs.filter((blog) => blog.id !== post.id)[
-  Math.floor(Math.random() * (blogs.length - 1))
+const notes = await getNotes();
+const randomBlog = notes.filter((blog) => blog.id !== post.id)[
+  Math.floor(Math.random() * (notes.length - 1))
 ];
 ---
 
-<Layout title="Blog">
+<Layout title="Notes">
   <main class="flex flex-col h-screen w-[99%] items-center">
     <Navbar />
 
     <div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2">
-      <a href="/" class="links mb-5">← back</a>
+      <a href="/" class="links mb-5 text-base">← back</a>
       <div class="text-left mb-10">
-        <div class="text-stone-200 tracking-tighter text-base">
+        <div class="text-base text-stone-200 tracking-tighter">
           {title}
         </div>
-        <div class="text-stone-500 text-sm italic">
+        <div class="text-stone-600 text-base">
           {description}
         </div>
       </div>
-      <div class="flex flex-col text-base tracking-tighter">
+      <div class="flex flex-col tracking-tighter text-base">
         <Content />
       </div>
-      <div class="mt-16 text-stone-500 italic">
+      <!-- <div class="mt-16 text-stone-500 italic">
         Thanks for reading! Want to read more like this? Read <a
           class="ml-1"
           href={randomBlog.slug}>{randomBlog.data.title}</a
         >
-      </div>
+      </div> -->
       <!-- <Footer /> -->
     </div>
   </main>

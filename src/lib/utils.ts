@@ -13,3 +13,10 @@ export async function getBlogs() {
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
   });
 }
+
+export async function getNotes() {
+  let notes = await getCollection("note", (note) => note);
+  return notes.sort((a, b) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
+}

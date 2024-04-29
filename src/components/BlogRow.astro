@@ -17,21 +17,17 @@ const {
   {
     isDraft ? (
       <>
-        <span class="text-sm sm:text-base text-stone-700">{title}</span>
-        <span class="text-xs sm:text-sm text-stone-700 font-bold tracking-widest">
+        <span class="text-base text-stone-700">{title}</span>
+        <span class="text-sm sm:text-sm text-stone-700 font-bold tracking-widest">
           DRAFT
         </span>
       </>
     ) : (
       <>
-        <a
-          href={`/blog/${slug}`}
-          class="links text-sm sm:text-base"
-          target="_blank"
-        >
+        <a href={`/blog/${slug}`} class="row text-base" target="_blank">
           <span>{title}</span>
         </a>
-        <span class="text-xs sm:text-sm">
+        <span class="text-base">
           {new Date(date).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
