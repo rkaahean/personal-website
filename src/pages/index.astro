@@ -23,7 +23,7 @@ const notes = await getNotes();
 
     <div class="w-full sm:w-2/5 flex flex-col flex-grow gap-10 text-base">
       <div>
-        <h1 class="mt-10 font-semibold">Ranjan Srinivas</h1>
+        <h1>Ranjan Srinivas</h1>
         <div class="text-stone-300">
           <p>
             I'm a 26/yo Software Engineer working at <a
@@ -44,21 +44,21 @@ const notes = await getNotes();
       </div>
 
       <div>
-        <h1 class="font-semibold">Projects</h1>
+        <h1>Projects</h1>
         <div class="grid grid-cols-2 gap-5 md:grid-cols-3">
           {projects.map((project) => <Project {project} />)}
         </div>
       </div>
 
       <div>
-        <h1 class="font-semibold">Blogs</h1>
+        <h1>Blogs</h1>
         <div class="flex flex-col gap-1">
           {blogs.map((post) => <BlogRow {post} />)}
         </div>
       </div>
 
       <div>
-        <h1 class="font-semibold">Notes</h1>
+        <h1>Notes</h1>
         <div class="flex flex-col gap-1">
           {notes.map((post) => <NoteRow {post} />)}
         </div>
