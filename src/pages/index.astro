@@ -9,6 +9,7 @@ import NoteRow from "@/components/NoteRow.astro";
 import { getBlogs, getNotes } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Project from "../components/Projects.astro";
+import Footer from "@/components/Footer";
 
 const projects = await getProjects(6);
 const blogs = await getBlogs();
@@ -64,6 +65,6 @@ const notes = await getNotes();
         </div>
       </div>
     </div>
-    <!-- <Footer /> -->
+    <Footer />
   </main>
 </Layout>

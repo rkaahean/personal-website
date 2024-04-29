@@ -1,18 +1,14 @@
-import { GithubIcon, TwitterIcon } from "lucide-react";
-
 export default function Footer() {
   return (
-    <div className="mb-5 text-stone-700">
-      <div className="flex flex-row justify-center gap-5 h-24 items-center">
-        <div>Made with ❤️ by Ranjan</div>
-
-        <a href="https://www.github.com/rkaahean" target="_blank">
-          <GithubIcon />
-        </a>
-        <a href="https://x.com/@rkaahean" target="_blank">
-          <TwitterIcon />
-        </a>
-      </div>
+    <div className="absolute bottom-0 mb-5 text-stone-500">
+      Source code for my website{" "}
+      <a
+        href="https://github.com/rkaahean/personal-website"
+        target="_blank"
+        className="links"
+      >
+        here.
+      </a>
     </div>
   );
 }
