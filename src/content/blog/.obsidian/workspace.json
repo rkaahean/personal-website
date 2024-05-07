@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "setting_up_blog.md",
+                "file": "sync_or_swim.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "setting_up_blog.md",
+                "file": "sync_or_swim.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "setting_up_blog.md",
+                "file": "sync_or_swim.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "setting_up_blog.md"
+                "file": "sync_or_swim.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "dd737926fa6ee301",
   "lastOpenFiles": [
+    "setting_up_blog.md",
     "cli_mbing_to_sucess.md",
     "images/1.png",
     "images",
@@ -155,7 +156,6 @@
     "Pasted image 20240114220602.png",
     "CleanShot 2024-01-14 at 21.56.04@2x.png",
     "Pasted image 20240114220058.png",
-    "sync_or_swim.md",
-    "setting_up_blog.md"
+    "sync_or_swim.md"
   ]
 }

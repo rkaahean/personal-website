@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "note/first_note.md",
+                "file": "note/go_channels.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "note/first_note.md",
+                "file": "note/go_channels.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "note/first_note.md",
+                "file": "note/go_channels.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "note/first_note.md"
+                "file": "note/go_channels.md"
               }
             }
           }
@@ -147,5 +147,12 @@
     }
   },
   "active": "e0041cf8a8104680",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "templates/note.md",
+    "note/go_channels.md",
+    "note/go_channels.md",
+    "note/first_note.md",
+    "templates",
+    "note/Race Detection.md"
+  ]
 }
