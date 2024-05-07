@@ -5,11 +5,11 @@ import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 
 import BlogRow from "@/components/BlogRow.astro";
+import Footer from "@/components/Footer";
 import NoteRow from "@/components/NoteRow.astro";
 import { getBlogs, getNotes } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Project from "../components/Projects.astro";
-import Footer from "@/components/Footer";
 
 const projects = await getProjects(6);
 const blogs = await getBlogs();
