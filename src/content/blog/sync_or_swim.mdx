@@ -4,31 +4,35 @@ date: "12/28/2023"
 description: "Demystifying concurrency in Rust"
 ---
 
+# Introduction
+
 In programming, whenever we want to speed up things, there are a bunch of techniques we can use. However, there is a whole
 bunch of terminlogy associated, and it drives me crazy remebering their nuances.
 
 <br />
 So here's a blog post, mostly to remind myself.
 
-## Firstly, a few definitions
+## Keywords
 
-#### Concurrency
+Lets talk about a few definitions first
+
+### Concurrency
 
 When multiple tasks are happening _around_ the same time. For example, loading multiple tabs in your web browser.
 
-#### Parallelism
+### Parallelism
 
 When a single task is done by multiple actors - which are usually CPU cores. For example, if you have to compute the sum of two numbers 1000 times, doing it 500 times on 1 core, and 500 times on another would be parallelism.
 
-#### Thread
+### Thread
 
 In simple terms, a thread is a piece of executing context. In practical terms, when you run a piece of code, it loads all the necessary data into a thread (usually a single 1) and executes it. You also have a separate thread for web-browsing. You can switch between these threads as you like.
 
-#### Multithreading
+### Multithreading
 
 Multiple threads within the same process. A code and web browser are on different threads, but they are not multi-threaded, because they are not of the same process.
 
-#### Synchronous vs Asynchronous programming
+### Synchronous vs Asynchronous programming
 
 These are programming models. I.e, instructing how the code is to be executed. Synchronous programming means the code runs in the order in which it is stated. In async programming, the code is written and executed concurrently. If you run an async program on multiple threads, you acheive parallelism.
 
@@ -57,7 +61,7 @@ This is the simplest form. We just add numbers in one thread, one by one. No con
         println!("Took: {:.2?}", elapsed);
     }
 ```
-
+<br/>
 For loop, run add a million times, and calculate duration. This takes about 4-8ms.
 
 ### Single Threaded - Asynchronous
@@ -83,6 +87,7 @@ For loop, run add a million times, and calculate duration. This takes about 4-8m
     }
 ```
 
+<br/>
 Instead of adding one-by-one, add asynchronously.
 
 - Firstly, we create a modified version of `add`, `add_async`, which is just the former with an `async` tag. We also make the runner async.
@@ -125,6 +130,7 @@ Okay, what if we split the 1M adds into multiple threads? The adds are still exe
     }
 ```
 
+<br/>
 - Split the addition into 4 threads. This means each thread will add 250_000 times.
 - Create a new thread using the thread::spawn syntax. Use the `move` keyword to force the closure to take ownership of the `tasks_per_thread` variable.
 - Modify the `runner` to take in an argument to specify the number of `add`s.
@@ -165,6 +171,7 @@ Now, not only do we create multiple threads, but we also make the `add`s async.
         println!("Took: {:.2?}", elapsed);
     }
 ```
+<br/>
 
 The difference here is that each thread is blocked until `runner` runs to completion. This runs in ~160ms.
 

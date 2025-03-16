@@ -8,8 +8,7 @@ export function Link({
   return (
     <a
       href={href}
-      target="_blank"
-      className="text-stone-400 hover:text-stone-300 font-medium underline underline-offset-4 text-sm"
+      className=" hover:text-orange-100 font-medium underline underline-offset-4 text-sm"
     >
       {children}
     </a>

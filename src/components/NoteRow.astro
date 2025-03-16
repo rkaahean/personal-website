@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Date } from "./blogs/Date";
+import { Link } from "./blogs/Link";
 
 type Props = {
   post: CollectionEntry<"note">;
@@ -17,11 +18,9 @@ const {
 
 <article class="flex justify-between">
   <>
-    <a href={`/note/${slug}`} class="row text-base" target="_blank">
-      <span>{title}</span>
-    </a>
-    <span class="text-base">
-      <Date date={date} />
-    </span>
+  <Link href={`/note/${slug}`}>
+    {title}
+  </Link>
+  <Date date={date} />
   </>
 </article>

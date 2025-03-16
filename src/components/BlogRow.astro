@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Date } from "./blogs/Date";
+import { Link } from "./blogs/Link";
 
 
 type Props = {
@@ -9,28 +10,17 @@ type Props = {
 
 const {
   post: {
-    data: { title, date, isDraft },
+    data: { title, date },
     slug,
   },
 } = Astro.props;
 ---
 
 <article class="flex justify-between">
-  {
-    isDraft ? (
-      <>
-        <span class="text-base text-stone-700">{title}</span>
-        <span class="text-sm sm:text-sm text-stone-700 font-bold tracking-widest">
-          DRAFT
-        </span>
-      </>
-    ) : (
-      <>
-        <a href={`/blog/${slug}`} class="row text-base" target="_blank">
-          <span>{title}</span>
-        </a>
-        <Date date={date} />
-      </>
-    )
-  }
+  <>
+    <Link href={`/blog/${slug}`}>
+      <span>{title}</span>
+    </Link>
+    <Date date={date} />
+  </>
 </article>

@@ -5,7 +5,6 @@ import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 
 import BlogRow from "@/components/BlogRow.astro";
-import Footer from "@/components/blogs/Footer";
 import { Link } from "@/components/blogs/Link";
 import { BaseText, Heading1 } from "@/components/blogs/Text";
 import NoteRow from "@/components/NoteRow.astro";
@@ -59,6 +58,5 @@ const notes = await getNotes();
         </div>
       </div>
     </div>
-    <Footer />
   </main>
 </Layout>

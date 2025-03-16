@@ -1,10 +1,9 @@
-import { Link } from "./Link";
+import { BaseText } from "./Text";
 
-export default function Footer() {
+export default function Footer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative bottom-0 mt-10 mb-5 text-stone-500">
-      Source code for my website{" "}
-      <Link href="https://github.com/rkaahean/personal-website">here.</Link>
+    <div className="pb-8">
+      <BaseText>{children}</BaseText>
     </div>
   );
 }
