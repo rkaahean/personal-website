@@ -1,11 +1,13 @@
 ---
 import { getProjects } from "@/lib/projects";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/blogs/Navbar";
 import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 
 import BlogRow from "@/components/BlogRow.astro";
-import Footer from "@/components/Footer";
+import Footer from "@/components/blogs/Footer";
+import { Link } from "@/components/blogs/Link";
+import { BaseText, Heading1 } from "@/components/blogs/Text";
 import NoteRow from "@/components/NoteRow.astro";
 import { getBlogs, getNotes } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
@@ -22,44 +24,36 @@ const notes = await getNotes();
   >
     <Navbar />
 
-    <div class="w-full sm:w-2/5 flex flex-col flex-grow gap-10 text-base">
+    <div class="w-full sm:w-2/5 flex flex-col flex-grow gap-4">
       <div>
-        <h1>Ranjan Srinivas</h1>
-        <div class="text-stone-300">
-          <p>
-            I'm a 27/yo Software Engineer working at <a
-              href="https://ebury.com/"
-              class="links">ChipperCash</a
-            >, and currently residing in London, UK.
-          </p>
-          <br />
-          <p>
-            In my free time, I play <a
-              href="https://www.ea.com/games/apex-legends"
-              class="links">Apex Legends</a
-            >, watch <a href="https://www.manutd.com" class="links"
-              >Manchester United</a
-            >, or just relax at coffee shops.
-          </p>
-        </div>
+        <Heading1>Ranjan Srinivas</Heading1>
+        <BaseText>
+            I'm a 27/yo Software Engineer working at <Link href="https://ebury.com/">ChipperCash</Link>
+            , and currently residing in London, UK.
+      </BaseText>
+      <BaseText>
+            In my free time, I play <Link href="https://www.ea.com/games/apex-legends">Apex Legends</Link>, watch <Link href="https://www.manutd.com">Manchester United</Link>
+            , or just relax at coffee shops.
+          </BaseText>
       </div>
 
       <div>
-        <h1>Projects</h1>
+        <Heading1>Projects</Heading1>
         <div class="grid grid-cols-2 gap-5 md:grid-cols-3">
           {projects.map((project) => <Project {project} />)}
         </div>
       </div>
 
       <div>
-        <h1>Blogs</h1>
+        <Heading1>Blogs</Heading1>
+
         <div class="flex flex-col gap-1">
           {blogs.map((post) => <BlogRow {post} />)}
         </div>
       </div>
 
       <div>
-        <h1>Notes</h1>
+        <Heading1>Notes</Heading1>
         <div class="flex flex-col gap-1">
           {notes.map((post) => <NoteRow {post} />)}
         </div>

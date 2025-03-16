@@ -1,5 +1,6 @@
 ---
 import type { Projects } from "../lib/projects";
+import { Link } from "./blogs/Link";
 
 type Props = {
   project: Projects;
@@ -11,8 +12,6 @@ const {
 ---
 
 <div class="w-fit flex flex-col">
-  <a href={link} class="links">
-    <span class="text-base">{name}</span>
-  </a>
+  <Link href={link || "/"}>{name}</Link>
   <span class="pt-1 text-sm text-stone-300">{description}</span>
 </div>

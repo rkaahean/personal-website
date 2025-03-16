@@ -1,6 +1,7 @@
 ---
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/blogs/Footer";
+import { Link } from "@/components/blogs/Link";
+import Navbar from "@/components/blogs/Navbar";
 import Layout from "@/layouts/Layout.astro";
 import { getNotes } from "@/lib/utils";
 import type { CollectionEntry } from "astro:content";
@@ -37,7 +38,7 @@ const randomBlog = notes.filter((blog) => blog.id !== post.id)[
     <Navbar />
 
     <div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2">
-      <a href="/" class="links mb-5 text-base">← back</a>
+      <Link href="/">← back</Link>
       <div class="text-left mb-10">
         <div class="text-base text-stone-200 tracking-tighter">
           {title}

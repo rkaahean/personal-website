@@ -1,0 +1,7 @@
+
+---
+const { href, children } = Astro.props;
+import { Link as CustomLink } from "@/components/blogs/Link.tsx";
+
+---
+return <CustomLink href={href}>{children}</CustomLink>;

@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Date } from "./blogs/Date";
 
 type Props = {
   post: CollectionEntry<"note">;
@@ -11,6 +12,7 @@ const {
     slug,
   },
 } = Astro.props;
+
 ---
 
 <article class="flex justify-between">
@@ -19,13 +21,7 @@ const {
       <span>{title}</span>
     </a>
     <span class="text-base">
-      {
-        new Date(date).toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        })
-      }
+      <Date date={date} />
     </span>
   </>
 </article>

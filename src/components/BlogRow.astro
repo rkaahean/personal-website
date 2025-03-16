@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Date } from "./blogs/Date";
+
 
 type Props = {
   post: CollectionEntry<"blog">;
@@ -27,13 +29,7 @@ const {
         <a href={`/blog/${slug}`} class="row text-base" target="_blank">
           <span>{title}</span>
         </a>
-        <span class="text-base">
-          {new Date(date).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </span>
+        <Date date={date} />
       </>
     )
   }
