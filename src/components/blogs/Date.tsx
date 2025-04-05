@@ -1,9 +1,9 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 export function Date({ date }: { date: string }) {
-	const formattedDate = dayjs(date).format('MMMM D, YYYY');
+  const formattedDate = dayjs(date).format("MMMM D, YYYY");
 
-	return (
-		<div className="text-stone-400 text-sm lg:text-xl">{formattedDate}</div>
-	);
+  return (
+    <div className="text-stone-400 text-sm 2xl:text-xl">{formattedDate}</div>
+  );
 }
