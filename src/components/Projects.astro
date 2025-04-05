@@ -1,17 +1,18 @@
 ---
-import type { Projects } from "../lib/projects";
-import { Link } from "./blogs/Link";
+import type { Projects } from '../lib/projects';
+import { Link } from './blogs/Link';
+import { TitleDescription } from './blogs/Text';
 
 type Props = {
-  project: Projects;
+	project: Projects;
 };
 
 const {
-  project: { repo: name, description, link },
+	project: { repo: name, description, link },
 } = Astro.props;
 ---
 
 <div class="w-fit flex flex-col">
-  <Link href={link || "/"}>{name}</Link>
-  <span class="pt-1 text-sm text-stone-300">{description}</span>
+	<Link href={link || '/'}>{name}</Link>
+	<TitleDescription>{description}</TitleDescription>
 </div>

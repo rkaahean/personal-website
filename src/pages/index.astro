@@ -1,16 +1,16 @@
 ---
-import { getProjects } from "@/lib/projects";
-import Navbar from "../components/blogs/Navbar";
-import "../globals.css";
-import Layout from "../layouts/Layout.astro";
+import { getProjects } from '@/lib/projects';
+import Navbar from '../components/blogs/Navbar';
+import '../globals.css';
+import Layout from '../layouts/Layout.astro';
 
-import BlogRow from "@/components/BlogRow.astro";
-import { Link } from "@/components/blogs/Link";
-import { BaseText, Heading1 } from "@/components/blogs/Text";
-import NoteRow from "@/components/NoteRow.astro";
-import { getBlogs, getNotes } from "@/lib/utils";
-import { twMerge } from "tailwind-merge";
-import Project from "../components/Projects.astro";
+import BlogRow from '@/components/BlogRow.astro';
+import { Link } from '@/components/blogs/Link';
+import { BaseText, Heading1 } from '@/components/blogs/Text';
+import NoteRow from '@/components/NoteRow.astro';
+import { getBlogs, getNotes } from '@/lib/utils';
+import { twMerge } from 'tailwind-merge';
+import Project from '../components/Projects.astro';
 
 const projects = await getProjects(6);
 const blogs = await getBlogs();
@@ -18,45 +18,45 @@ const notes = await getNotes();
 ---
 
 <Layout title="Ranjan Srinivas - Home">
-  <main
-    class={twMerge("flex flex-col h-screen w-screen items-center px-5 sm:px-0")}
-  >
-    <Navbar />
+	<main
+		class={twMerge('flex flex-col h-screen w-screen items-center px-5 sm:px-0')}
+	>
+		<Navbar />
 
-    <div class="w-full sm:w-2/5 flex flex-col flex-grow gap-4">
-      <div>
-        <Heading1>Ranjan Srinivas</Heading1>
-        <BaseText>
-            I'm a 27/yo Software Engineer working at <Link href="https://ebury.com/">ChipperCash</Link>
-            , and currently residing in London, UK.
-      </BaseText>
-      <BaseText>
-            In my free time, I play <Link href="https://www.ea.com/games/apex-legends">Apex Legends</Link>, watch <Link href="https://www.manutd.com">Manchester United</Link>
-            , or just relax at coffee shops.
-          </BaseText>
-      </div>
+		<div class="w-full sm:w-2/5 flex flex-col flex-grow gap-4 lg:gap-8">
+			<div>
+				<Heading1>Ranjan Srinivas</Heading1>
+				<BaseText>
+					I'm a 27/yo Software Engineer working at <Link
+						href="https://ebury.com/">ChipperCash</Link
+					>, and currently residing in London, UK. In my free time, I play <Link
+						href="https://www.ea.com/games/apex-legends">Apex Legends</Link
+					>, watch <Link href="https://www.manutd.com">Manchester United</Link>,
+					or just relax at coffee shops.
+				</BaseText>
+			</div>
 
-      <div>
-        <Heading1>Projects</Heading1>
-        <div class="grid grid-cols-2 gap-5 md:grid-cols-3">
-          {projects.map((project) => <Project {project} />)}
-        </div>
-      </div>
+			<div>
+				<Heading1>Projects</Heading1>
+				<div class="grid grid-cols-2 gap-5 md:grid-cols-3">
+					{projects.map((project) => <Project {project} />)}
+				</div>
+			</div>
 
-      <div>
-        <Heading1>Blogs</Heading1>
+			<div>
+				<Heading1>Blogs</Heading1>
 
-        <div class="flex flex-col gap-1">
-          {blogs.map((post) => <BlogRow {post} />)}
-        </div>
-      </div>
+				<div class="flex flex-col gap-1">
+					{blogs.map((post) => <BlogRow {post} />)}
+				</div>
+			</div>
 
-      <div>
-        <Heading1>Notes</Heading1>
-        <div class="flex flex-col gap-1">
-          {notes.map((post) => <NoteRow {post} />)}
-        </div>
-      </div>
-    </div>
-  </main>
+			<div>
+				<Heading1>Notes</Heading1>
+				<div class="flex flex-col gap-1">
+					{notes.map((post) => <NoteRow {post} />)}
+				</div>
+			</div>
+		</div>
+	</main>
 </Layout>

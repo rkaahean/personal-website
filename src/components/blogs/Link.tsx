@@ -1,16 +1,18 @@
+import { BaseText } from './Text';
+
 export function Link({
-  href,
-  children,
+	href,
+	children,
 }: {
-  href: string;
-  children: React.ReactNode;
+	href: string;
+	children: React.ReactNode;
 }) {
-  return (
-    <a
-      href={href}
-      className=" hover:text-orange-100 font-medium underline underline-offset-4 text-sm"
-    >
-      {children}
-    </a>
-  );
+	return (
+		<a
+			href={href}
+			className=" hover:text-orange-100 font-medium underline underline-offset-4 text-sm lg:text-xl"
+		>
+			{children}
+		</a>
+	);
 }

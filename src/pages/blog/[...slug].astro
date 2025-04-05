@@ -1,49 +1,64 @@
 ---
-import Footer from "@/components/blogs/Footer";
-import { Link } from "@/components/blogs/Link";
-import Navbar from "@/components/blogs/Navbar";
-import { BaseList, BaseText, Heading1, Heading2, Heading3 } from "@/components/blogs/Text";
-import Layout from "@/layouts/Layout.astro";
-import { getBlogs } from "@/lib/utils";
-import type { CollectionEntry } from "astro:content";
+import Footer from '@/components/blogs/Footer';
+import { Link } from '@/components/blogs/Link';
+import Navbar from '@/components/blogs/Navbar';
+import {
+	BaseList,
+	BaseText,
+	Heading1,
+	Heading2,
+	Heading3,
+	NumberList,
+} from '@/components/blogs/Text';
+import Layout from '@/layouts/Layout.astro';
+import { getBlogs } from '@/lib/utils';
+import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getBlogs();
+	const posts = await getBlogs();
 
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
 }
 
 type Props = {
-  post: CollectionEntry<"blog">;
+	post: CollectionEntry<'blog'>;
 };
 
-const {
-  post,
-} = Astro.props;
+const { post } = Astro.props;
 const { Content } = await post.render();
 
 const blogs = await getBlogs();
 const randomBlog = blogs.filter((blog) => blog.id !== post.id)[
-  Math.floor(Math.random() * (blogs.length - 1))
+	Math.floor(Math.random() * (blogs.length - 1))
 ];
 ---
 
 <Layout title="Blog">
-  <main class="flex flex-col h-screen items-center">
-    <Navbar />
-    <div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2 gap-4">
-      <Link href="/">← back</Link>
-      <div class="flex flex-col tracking-tighter">
-        <Content components={{a: Link, p: BaseText, h1: Heading1, h2: Heading2, ul: BaseList, h3: Heading3}}/>
-      </div>
-      <Footer>
-        Thanks for reading! Want to read more like this? Read <Link
-          href={randomBlog.slug}>{randomBlog.data.title}</Link
-        >
-      </Footer>
-    </div>
-  </main>
+	<main class="flex flex-col h-screen items-center">
+		<Navbar />
+		<div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2 gap-4">
+			<Link href="/">← back</Link>
+			<div class="flex flex-col tracking-tighter">
+				<Content
+					components={{
+						a: Link,
+						p: BaseText,
+						h1: Heading1,
+						h2: Heading2,
+						h3: Heading3,
+						ol: NumberList,
+						ul: BaseList,
+					}}
+				/>
+			</div>
+			<Footer>
+				Thanks for reading! Want to read more like this? Read <Link
+					href={randomBlog.slug}>{randomBlog.data.title}</Link
+				>
+			</Footer>
+		</div>
+	</main>
 </Layout>
