@@ -6,6 +6,11 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
+      colors: {
+        olive: "#152210",
+        ecru: "#e1c68f",
+        champagne: "#FFF8EC",
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,14 @@
+import { twMerge } from "tailwind-merge";
+import { BASE_TEXT_COLOR, HEADER_COLOR } from "./colors";
+
 export function Heading1({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="text-base text-gray-50 tracking-tighter lg:text-2xl">
+    <h1
+      className={twMerge(
+        "text-base tracking-tighter lg:text-2xl",
+        HEADER_COLOR
+      )}
+    >
       {children}
     </h1>
   );
@@ -8,7 +16,12 @@ export function Heading1({ children }: { children: React.ReactNode }) {
 
 export function BaseText({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm 2xl:text-xl inline-block tracking-tight">
+    <p
+      className={twMerge(
+        "text-sm 2xl:text-xl inline-block tracking-tight",
+        BASE_TEXT_COLOR
+      )}
+    >
       {children}
     </p>
   );
@@ -16,7 +29,12 @@ export function BaseText({ children }: { children: React.ReactNode }) {
 
 export function Heading2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-sm font-semibold text-stone-500 pt-4 2xl:text-xl">
+    <h2
+      className={twMerge(
+        "text-sm font-semibold text-emerald-700 pt-4 2xl:text-xl",
+        HEADER_COLOR
+      )}
+    >
       {children}
     </h2>
   );
@@ -40,6 +58,8 @@ export function NumberList({ children }: { children: React.ReactNode }) {
 
 export function TitleDescription({ children }: { children: React.ReactNode }) {
   return (
-    <span className="pt-1 text-sm text-stone-300 2xl:text-xl">{children}</span>
+    <span className={twMerge("pt-1 text-sm 2xl:text-xl", BASE_TEXT_COLOR)}>
+      {children}
+    </span>
   );
 }

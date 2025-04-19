@@ -1,3 +1,6 @@
+import { twMerge } from "tailwind-merge";
+import { BASE_TEXT_COLOR } from "./colors";
+
 export function Link({
   href,
   children,
@@ -8,7 +11,10 @@ export function Link({
   return (
     <a
       href={href}
-      className=" hover:text-orange-100 font-medium underline underline-offset-4 text-sm 2xl:text-xl"
+      className={twMerge(
+        " font-medium underline underline-offset-4 text-sm 2xl:text-xl",
+        BASE_TEXT_COLOR
+      )}
     >
       {children}
     </a>

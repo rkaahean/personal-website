@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-olive {
+    background-color: theme("colors.olive");
+  }
+}
+
+@layer utilities {
+  .bg-champagne {
+    background-color: theme("colors.champagne");
+  }
+}
+
+@layer utilities {
+  .bg-ecru {
+    background-color: theme("colors.ecru");
+  }
+}

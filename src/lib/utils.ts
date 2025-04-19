@@ -7,7 +7,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export async function getBlogs() {
-  let blogs = await getCollection("blog", (blog) => !blog.data.isHidden);
+  const env = import.meta.env.MODE;
+  let blogs = await getCollection(
+    "blog",
+    (blog) => !(blog.data.isHidden && env === "production")
+  );
 
   return blogs.sort((a, b) => {
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
