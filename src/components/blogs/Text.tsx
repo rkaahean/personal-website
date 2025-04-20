@@ -6,7 +6,8 @@ export function Heading1({ children }: { children: React.ReactNode }) {
     <h1
       className={twMerge(
         "text-base tracking-tighter lg:text-2xl",
-        HEADER_COLOR
+        HEADER_COLOR,
+        "font-bold"
       )}
     >
       {children}
@@ -31,8 +32,9 @@ export function Heading2({ children }: { children: React.ReactNode }) {
   return (
     <h2
       className={twMerge(
-        "text-sm font-semibold text-emerald-700 pt-4 2xl:text-xl",
-        HEADER_COLOR
+        "text-sm font-semibold pt-4 2xl:text-xl",
+        HEADER_COLOR,
+        "font-bold"
       )}
     >
       {children}
@@ -42,18 +44,39 @@ export function Heading2({ children }: { children: React.ReactNode }) {
 
 export function Heading3({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-sm font-semibold text-stone-500 pt-4 2xl:text-xl">
+    <h2
+      className={twMerge(
+        "text-sm font-semibold pt-4 2xl:text-xl",
+        HEADER_COLOR,
+        "font-bold"
+      )}
+    >
       {children}
     </h2>
   );
 }
 
 export function BaseList({ children }: { children: React.ReactNode }) {
-  return <ul className="list-disc pl-5 text-sm 2xl:text-xl">{children}</ul>;
+  return (
+    <ul
+      className={twMerge("list-disc pl-5 text-sm 2xl:text-xl", BASE_TEXT_COLOR)}
+    >
+      {children}
+    </ul>
+  );
 }
 
 export function NumberList({ children }: { children: React.ReactNode }) {
-  return <ol className="pl-5 list-decimal text-sm 2xl:text-xl">{children}</ol>;
+  return (
+    <ol
+      className={twMerge(
+        "pl-5 list-decimal text-sm 2xl:text-xl",
+        BASE_TEXT_COLOR
+      )}
+    >
+      {children}
+    </ol>
+  );
 }
 
 export function TitleDescription({ children }: { children: React.ReactNode }) {
