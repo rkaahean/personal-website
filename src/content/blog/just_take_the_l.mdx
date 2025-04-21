@@ -2,13 +2,20 @@
 title: Just take the L
 date: 03/16/2025
 description: Moving from Los Angeles to London
-isHidden: True
 ---
+import { Image } from 'astro:assets';
+import memorylook from '../../images/memorylook.jpeg'
+import spot from '../../images/spot.jpg'
+import mco from '../../images/mco.jpg'
+import salaries from '../../images/salaries.webp'
+
+
+
+
 
 # Introduction
 
-On April 22 2024, I left my home of around 5 years in Los Angeles, and moved to London. Not many folks make the move in that direction,
-especially software engineers, so I thought I'd share some of my thoughts.
+On April 22 2024, I left my home of 5 years in Los Angeles, and moved to London. I wanted to share my thoughts around why I moved, how the two cities better, and why London is so amazing.
 
 ## ..Why?
 
@@ -25,20 +32,27 @@ when I was unfortunately made redudant in March of 2025. I packed up my bags, an
 
 ## Aren't the salaries in the UK much lower?
 
-Yes. They are. Without a doubt. But I tend to look at it was the USA being the outlier.
+Yes. They are. Without a doubt. But the USA is the outlier, not the norm.
+<div style={{ display: "flex", justifyContent: "center", padding: '20px' , flexDirection:'column', gap: '8px'}}>
+
+<Image src={salaries} alt="salary comparison" loading="lazy" width="800" height="800"/>
+[Source](https://www.reddit.com/r/dataisbeautiful/comments/17a63yo/oc_2023_developer_compensation_by_country/)
+
+</div>
+
 
 ## So...what's different? 
 
 A lot, but also not a lot? IMO, the two biggest difference are weather and public transport. \
 \
-Lets talk about the weather in London. Is it rough? Yes. Is it as rough as I thought? Not really. I partly felt this way
+Lets talk about the weather in London. Is it rough? **Yes**. \
+Is it as rough as I thought? Not really. I partly felt this way
 because LA itself was getting colder. In fact, it had one of its [coldest days](https://www.reddit.com/r/LosAngeles/comments/1jbnjm9/friday_was_the_coldest_day_in_la_since_feb_2001/) in the last 24 years. \
 \
-The other aspect of dealing with rough weather is how you dress.
-In London, you know it's going to be cold, so are well equipped to deal with it with cashmere sweaters, puffer jackets and woolen scarves (thanks UNIQLO). \
-\
-Whereas in LA, its mostly T-shirt weather, or just a tad colder. \
-Not too cold to change your wardrobe style, not too hot to be without a few hoodies. LA has the best weather in the world IMO, so this was a pretty uneven contest to begin with. \
+The other aspect of bad weather is how you dress.
+In London, you know it's going to be cold, so you are equipped with cashmere sweaters, puffer jackets and woolen scarves (thanks UNIQLO). \
+Whereas in LA, its _almost_ T-shirt weather, or just a tad colder. \
+Not too cold to wear multiple layers, not too hot to be without a few hoodies. LA has the best weather in the world IMO, so this was a pretty uneven contest to begin with. \
 \
 Public transport is the next big difference. Calling it a "difference" is being very generous to LA. Forget about the sheer vastness of TFL (Transport for London), the number of different lines, and the feeling of not being dependent on a car - all those are great. But what sets it apart is _who_ is using it. \
 \
@@ -48,3 +62,12 @@ Some stations are populated by the homeless, and I wouldn't recommend using the 
 ## What do you miss?
 
 I miss the LA coffee shop scene. I miss the vast expanse that is Koreatown. I miss the t-shirt weather. I miss being able to either go the beaches in Malibu, or skiing in Big Bear.
+
+But 6 months in, I think London fits into my idea of an Ideal city.
+
+<div style={{ display: "flex", justifyContent: "center", padding: '20px' }}>
+    <Image src={memorylook} alt="a tasty matcha" loading="lazy" width="200" height="200"/>
+    <Image src={spot} alt="a tasty matcha" loading="lazy" width="200" height="600"/>
+    <Image src={mco} alt="a tasty matcha" loading="lazy" width="200" height="600"/>
+
+</div>
