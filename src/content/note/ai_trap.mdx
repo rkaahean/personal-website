@@ -1,45 +1,48 @@
 ---
 title: The AI trap
-date: 05/04/2025
+date: 04/05/2025
 description: The AI trap
 ---
 
 AI is great. There are a dozen blog posts covering them. This isn't one of them. What nobody tells you is how frustrating it can be.
 
-<br/>
+<br />
 
-I was recently working on a [ffmpeg](https://ffmpeg.org/) related project at work, and tried out the latest [Gemini 2.5 model](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/). It is _really_ verbose. Like adding a comment for every line of code verbose. 
+I was recently working on a [ffmpeg](https://ffmpeg.org/) related project at work, and tried out the latest [Gemini 2.5 model](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/). It is _really_ verbose. Like adding a comment for every line of code verbose.
 Even after asking the model to cut it out and keep it concise, it refused. But thats not even the worst part.
 NumberList
-<br/>
+
+<br />
 
 These AI models disillusion you with the sense of a solution. They pretend as if they have the answer, and assure you that with a few more prompts, you would have solved your problem. But what **actually** happens is -
-<br/>
+
+<br />
 
 1. You ask it for code
-2. It gives you code that *doesn't* compile
+2. It gives you code that _doesn't_ compile
 3. You fix errors so that it compiles
 4. It doesn't do what you asked for. But _it seems_ close.
 5. Go back to step #1
 
-<br/>
+<br />
 
 What actually **really really** sucks about this is _how much_ time you waste doing things that isn't even relevant to your original problem. At best, you spend 5-10 minutes in one loop, and at worst, you
-encounter another completely *unrelated* issue. And you know where you go to find the solution? \
+encounter another completely _unrelated_ issue. And you know where you go to find the solution? \
 **The goddammit AI again.**
-<br/>
+
+<br />
 
 I wasted ~2 hours trying to get Gemini give me the answer. The actual fix - a bit of stack overflow magic, and some personal intuition. The feeling is magical - only to realise that you
 did not need AI for this **AT ALL**. Not only did you waste 2 hours, you absolutely _kill_ all the momentum you have.
-<br/>
 
-I'm not saying you should abandon AI. But if you really care about "getting gud" you should 
+<br />
+
+I'm not saying you should abandon AI. But if you really care about "getting gud" you should
+
 - disable any in-editor AI. copilot. cursor. whatever. They take over your thinking, and you end up solving a problem that you didn't even need to solve.
 - default to stackoverflow. If you have an issue, go there. It has worked for others, it should work for you.
 - use AI as a means of brainstorming. Don't ask if for the code. Ask it for an approach. Validate it with stackoverflow.
 - timebox it. Don't run into rabbit holes and dead ends. Make sure you're controlling the AI, and not the other way around.
-<br/>
+  <br />
 
 I still believe that using AI is a net positive, but this was a very frustrating experience.
-
-
