@@ -36,7 +36,11 @@ const randomBlog = blogs.filter((blog) => blog.id !== post.id)[
 ];
 ---
 
-<Layout title="Blog">
+<Layout 
+	title={post.data.title}
+	description={post.data.description}
+	article={true}
+>
 	<main class="flex flex-col h-screen items-center">
 		<Navbar />
 		<div class="flex justify-start flex-col h-full w-10/12 sm:w-1/2 gap-4">

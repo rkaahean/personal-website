@@ -1,25 +1,52 @@
 ---
+import "@fontsource/inter";
+import { SEO } from "astro-seo";
+
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
 }
 
-const { title } = Astro.props;
-import "@fontsource/inter";
+const { 
+  title, 
+  description = "Ranjan's Internet Home",
+  image = "/favicon.png",
+  article = false 
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title: title,
+          type: article ? "article" : "website",
+          image: image,
+        },
+        optional: {
+          description: description,
+          siteName: "Ranjan's Website",
+        },
+      }}
+      twitter={{
+        creator: "@rkaahean",
+        card: "summary",
+      }}
+    />
     <script
       defer
       src="https://umami-production-3192.up.railway.app/script.js"
       data-website-id="6c80e2ad-0804-4a50-9b48-d9954ec7bc3c"></script>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Ranjan's Internet Home" />
     <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body>
     <slot />
@@ -41,6 +68,15 @@ import "@fontsource/inter";
   body {
     @apply text-stone-300;
     font-family: "Inter";
+  }
+
+  /* Inline code styling */
+  :not(pre) > code {
+    color: #152210 !important;
+    background-color: #FFF8EC !important;
+    padding: 0.0625rem 0.125rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 0.875rem !important;
   }
 
 </style>

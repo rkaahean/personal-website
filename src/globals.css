@@ -19,3 +19,12 @@
     background-color: theme("colors.ecru");
   }
 }
+
+/* Override inline code styling with highest specificity */
+:not(pre) > code {
+  color: #152210 !important;
+  background-color: #FFF8EC !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875rem !important;
+}
