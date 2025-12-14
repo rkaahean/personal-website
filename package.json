@@ -22,6 +22,8 @@
     "astro": "^5.16.5",
     "astro-expressive-code": "^0.40.2",
     "astro-seo": "^0.8.4",
+    "baseline-browser-mapping": "^2.9.7",
+    "caniuse-lite": "^1.0.30001760",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.19",
