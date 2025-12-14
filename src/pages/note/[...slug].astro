@@ -3,12 +3,12 @@ import Footer from '@/components/blogs/Footer';
 import { Link } from '@/components/blogs/Link';
 import Navbar from '@/components/blogs/Navbar';
 import {
-	BaseList,
-	BaseText,
-	Heading1,
-	Heading2,
-	Heading3,
-	NumberList,
+BaseList,
+BaseText,
+Heading1,
+Heading2,
+Heading3,
+NumberList,
 } from '@/components/blogs/Text';
 import Layout from '@/layouts/Layout.astro';
 import { getNotes } from '@/lib/utils';
@@ -60,6 +60,9 @@ const randomBlog = notes.filter((blog) => blog.id !== post.id)[
 						h3: Heading3,
 						ol: NumberList,
 						ul: BaseList,
+                        table: (props: any) => <table {...props} />,
+                        th: (props: any) => <th  {...props} />,
+                        td: (props: any) => <td  {...props} />,
 					}}
 				/>
 			</div>

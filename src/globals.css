@@ -23,8 +23,18 @@
 /* Override inline code styling with highest specificity */
 :not(pre) > code {
   color: #152210 !important;
-  background-color: #FFF8EC !important;
+  background-color: #fff8ec !important;
   padding: 0.125rem 0.25rem !important;
   border-radius: 0.25rem !important;
   font-size: 0.875rem !important;
+}
+
+.mdx-content table {
+  font-size: 1rem; /* match your body text size */
+}
+
+.mdx-content th,
+.mdx-content td {
+  text-align: left; /* override center alignment */
+  padding: 0.25rem 0.5rem;
 }

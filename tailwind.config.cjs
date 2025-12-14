@@ -8,10 +8,9 @@ module.exports = {
       },
       colors: {
         olive: "#152210",
-        ecru: "#e1c68f",
+        ecru: "#848784",
         champagne: "#FFF8EC",
       },
     },
   },
-  plugins: [],
 };

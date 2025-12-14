@@ -32,7 +32,7 @@ export function Heading2({ children }: { children: React.ReactNode }) {
   return (
     <h2
       className={twMerge(
-        "text-sm font-semibold pt-4 2xl:text-xl",
+        "text-sm font-semibold pt-4 pb-1 2xl:text-xl",
         HEADER_COLOR,
         "font-bold"
       )}
@@ -63,6 +63,30 @@ export function BaseList({ children }: { children: React.ReactNode }) {
     >
       {children}
     </ul>
+  );
+}
+
+export function Table({ children }: { children: React.ReactNode }) {
+  return (
+    <table className={twMerge("text-sm 2xl:text-xl", BASE_TEXT_COLOR)}>
+      {children}
+    </table>
+  );
+}
+
+export function TableHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <th className={twMerge("text-sm pt-2 text-left 2xl:text-xl", HEADER_COLOR)}>
+      {children}
+    </th>
+  );
+}
+
+export function TableDetail({ children }: { children: React.ReactNode }) {
+  return (
+    <td className={twMerge("text-sm 2xl:text-xl max-w-0", BASE_TEXT_COLOR)}>
+      {children}
+    </td>
   );
 }
 
